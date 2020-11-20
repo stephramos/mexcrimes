@@ -1,0 +1,13 @@
+<script>
+  function activate_places(){
+    var defaultBounds =  new google.maps.LatLngBounds(
+          new google.maps.LatLng(-99.597, 18.992),
+          new google.maps.LatLng(-98.606, 19.921));
+    var options = {bounds : defaultBounds,componentRestrictions: {"country": 'mx'}};
+    var location_input = document.getElementById('id_address');
+    var autocomplete = new google.maps.places.Autocomplete(location_input, options)
+  }
+  </script>
+  <script type="text/javascript"
+    src = "https://maps.googleapis.com/maps/api/js?key=YOURKEY&libraries=places&callback=activate_places" async defer>
+</script>

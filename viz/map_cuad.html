@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2a2620bb837546b0b1c507987c4f48e6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+        <div style='position: fixed; 
+        bottom: 10px; left: 10px; width: 130px; height: 100px; 
+        border:2px solid black; z-index:9999; font-size:12px;
+        background-color:white;
+        '>&nbsp; Legend <br>
+        &nbsp; Your Address   &nbsp; <i class='fa fa-map-marker fa-2x'
+                      style='color:red'></i><br>
+        &nbsp; Police Station  &nbsp; <i class='fa fa-map-marker fa-2x'
+                      style='color:green'></i><br>
+        &nbsp; Reported Crime &nbsp; <i class='fa fa-map-marker fa-2x'
+                      style='color:DeepSkyBlue'></i><br>
+        </div>
+          
+    
+            <div class="folium-map" id="map_2a2620bb837546b0b1c507987c4f48e6" ></div>
+        
+</body>
+<script>    
+    
+            var map_2a2620bb837546b0b1c507987c4f48e6 = L.map(
+                "map_2a2620bb837546b0b1c507987c4f48e6",
+                {
+                    center: [19.3931933, -99.1712245],
+                    crs: L.CRS.EPSG3857,
+                    zoomControl: true,
+                    zoom: 16,
+                    color: "RGBA",
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_73e09553a90f448d908633585db75475 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+        function geo_json_2422ec5b3777427e919e115f9d05f604_onEachFeature(feature, layer) {
+            layer.on({
+                click: function(e) {
+                    map_2a2620bb837546b0b1c507987c4f48e6.fitBounds(e.target.getBounds());
+                }
+            });
+        };
+        var geo_json_2422ec5b3777427e919e115f9d05f604 = L.geoJson(null, {
+                onEachFeature: geo_json_2422ec5b3777427e919e115f9d05f604_onEachFeature,
+            
+        });
+        function geo_json_2422ec5b3777427e919e115f9d05f604_add (data) {
+            geo_json_2422ec5b3777427e919e115f9d05f604.addData(data)
+                .addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        }
+            geo_json_2422ec5b3777427e919e115f9d05f604_add({"bbox": [-99.1732081739, 19.3896602429, -99.1657911739, 19.3997842429], "features": [{"bbox": [-99.1732081739, 19.3896602429, -99.1657911739, 19.3997842429], "geometry": {"coordinates": [[[-99.1732081739, 19.3911862429], [-99.1727211739, 19.3927672429], [-99.1706491739, 19.3996612429], [-99.1701361739, 19.3997842429], [-99.1700041739, 19.3995952429], [-99.1697531739, 19.3981552429], [-99.1695901739, 19.3973102429], [-99.1694621739, 19.3967172429], [-99.1693001739, 19.3963552429], [-99.1690801739, 19.3961142429], [-99.1683621739, 19.3952702429], [-99.1657911739, 19.3923852429], [-99.1664451739, 19.3896602429], [-99.1720561739, 19.3909312429], [-99.1732081739, 19.3911862429]]], "type": "Polygon"}, "id": "645", "properties": {"alcaldia": "BENITO JUAREZ", "clave_sect": "1", "geo_point_2d": {"lat": 19.3935063599, "lon": -99.1696308686}, "id": 645, "no_cuadran": 7, "no_region": 1, "sector": "DEL VALLE", "zona": "SUR"}, "type": "Feature"}], "type": "FeatureCollection"});
+        
+    
+            var marker_9a90d1624dae4c4286ee14804e20f719 = L.marker(
+                [19.39258, -99.16742],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_7ff4b11f2c1d4c7cb0988cbb262e9fda = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9a90d1624dae4c4286ee14804e20f719.setIcon(icon_7ff4b11f2c1d4c7cb0988cbb262e9fda);
+        
+    
+        var popup_0aef0b055b4a40538e93f66379c4cffa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f84bdc635235408e811d73df0b9f81f2 = $(`<div id="html_f84bdc635235408e811d73df0b9f81f2" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO SIN VIOLENCIA</div>`)[0];
+            popup_0aef0b055b4a40538e93f66379c4cffa.setContent(html_f84bdc635235408e811d73df0b9f81f2);
+        
+
+        marker_9a90d1624dae4c4286ee14804e20f719.bindPopup(popup_0aef0b055b4a40538e93f66379c4cffa)
+        ;
+
+        
+    
+    
+            marker_9a90d1624dae4c4286ee14804e20f719.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dbd42cb1441248cb8a421ab015e6bd41 = L.marker(
+                [19.39544, -99.17155],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_a5d3af70313046a9930a2408931a57a2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_dbd42cb1441248cb8a421ab015e6bd41.setIcon(icon_a5d3af70313046a9930a2408931a57a2);
+        
+    
+        var popup_784fd001deae48c79722f9542c443638 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5fcd821ff3084cde8bc002cff931d463 = $(`<div id="html_5fcd821ff3084cde8bc002cff931d463" style="width: 100.0%; height: 100.0%;">ROBO A TRANSEUNTE SALIENDO DEL CAJERO CON VIOLENCIA</div>`)[0];
+            popup_784fd001deae48c79722f9542c443638.setContent(html_5fcd821ff3084cde8bc002cff931d463);
+        
+
+        marker_dbd42cb1441248cb8a421ab015e6bd41.bindPopup(popup_784fd001deae48c79722f9542c443638)
+        ;
+
+        
+    
+    
+            marker_dbd42cb1441248cb8a421ab015e6bd41.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_443b1460a2db4d3d977f431ba5ca1b87 = L.marker(
+                [19.39515, -99.16826],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_ac48fa8af9f142f8a84c405dda39d3f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_443b1460a2db4d3d977f431ba5ca1b87.setIcon(icon_ac48fa8af9f142f8a84c405dda39d3f3);
+        
+    
+        var popup_c93863b23dfa44399ca97be0d3dcb06d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b438ffd29696400f8f42cc107ced6511 = $(`<div id="html_b438ffd29696400f8f42cc107ced6511" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO SIN VIOLENCIA</div>`)[0];
+            popup_c93863b23dfa44399ca97be0d3dcb06d.setContent(html_b438ffd29696400f8f42cc107ced6511);
+        
+
+        marker_443b1460a2db4d3d977f431ba5ca1b87.bindPopup(popup_c93863b23dfa44399ca97be0d3dcb06d)
+        ;
+
+        
+    
+    
+            marker_443b1460a2db4d3d977f431ba5ca1b87.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a2641d4d9a3544eabb1777cd8e81785d = L.marker(
+                [19.39263, -99.16607],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_24f411f405884ef88311272768b723ca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a2641d4d9a3544eabb1777cd8e81785d.setIcon(icon_24f411f405884ef88311272768b723ca);
+        
+    
+        var popup_6e75be997ff048e29a479fa31acef375 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_83e6f61868764db2b34f9d1912a727af = $(`<div id="html_83e6f61868764db2b34f9d1912a727af" style="width: 100.0%; height: 100.0%;">ROBO DE VEHICULO DE SERVICIO PARTICULAR SIN VIOLENCIA</div>`)[0];
+            popup_6e75be997ff048e29a479fa31acef375.setContent(html_83e6f61868764db2b34f9d1912a727af);
+        
+
+        marker_a2641d4d9a3544eabb1777cd8e81785d.bindPopup(popup_6e75be997ff048e29a479fa31acef375)
+        ;
+
+        
+    
+    
+            marker_a2641d4d9a3544eabb1777cd8e81785d.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9c8f3aaa72224c67b92700c60217dc18 = L.marker(
+                [19.39438, -99.16777],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_409802efb02a474da625025e90176cb1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9c8f3aaa72224c67b92700c60217dc18.setIcon(icon_409802efb02a474da625025e90176cb1);
+        
+    
+        var popup_aeb1a9e2e84c4e029a85ec1631f79202 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_33778863436f4675b71ca1e5465be48b = $(`<div id="html_33778863436f4675b71ca1e5465be48b" style="width: 100.0%; height: 100.0%;">ROBO DE OBJETOS DEL INTERIOR DE UN VEHICULO</div>`)[0];
+            popup_aeb1a9e2e84c4e029a85ec1631f79202.setContent(html_33778863436f4675b71ca1e5465be48b);
+        
+
+        marker_9c8f3aaa72224c67b92700c60217dc18.bindPopup(popup_aeb1a9e2e84c4e029a85ec1631f79202)
+        ;
+
+        
+    
+    
+            marker_9c8f3aaa72224c67b92700c60217dc18.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2b7d43059eab45769af5ed7a06b497e7 = L.marker(
+                [19.39429, -99.17197],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_443c685407f443cc86c0f30273720a1f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2b7d43059eab45769af5ed7a06b497e7.setIcon(icon_443c685407f443cc86c0f30273720a1f);
+        
+    
+        var popup_f1773fb6675049d593cf9c0405d45da6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_824fa3e115d1490faa9910c58b11072a = $(`<div id="html_824fa3e115d1490faa9910c58b11072a" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO SIN VIOLENCIA</div>`)[0];
+            popup_f1773fb6675049d593cf9c0405d45da6.setContent(html_824fa3e115d1490faa9910c58b11072a);
+        
+
+        marker_2b7d43059eab45769af5ed7a06b497e7.bindPopup(popup_f1773fb6675049d593cf9c0405d45da6)
+        ;
+
+        
+    
+    
+            marker_2b7d43059eab45769af5ed7a06b497e7.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_62fb03e7ee5f4fcab709d7d0ab20175b = L.marker(
+                [19.39819, -99.17005],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_7982030281344a948732ea8fb4418caa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_62fb03e7ee5f4fcab709d7d0ab20175b.setIcon(icon_7982030281344a948732ea8fb4418caa);
+        
+    
+        var popup_52ea4fb35f54437d9f00d4e706481a8c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a1d5e8a182904d25b09e73b6940e234a = $(`<div id="html_a1d5e8a182904d25b09e73b6940e234a" style="width: 100.0%; height: 100.0%;">HOMICIDIO POR ARMA DE FUEGO</div>`)[0];
+            popup_52ea4fb35f54437d9f00d4e706481a8c.setContent(html_a1d5e8a182904d25b09e73b6940e234a);
+        
+
+        marker_62fb03e7ee5f4fcab709d7d0ab20175b.bindPopup(popup_52ea4fb35f54437d9f00d4e706481a8c)
+        ;
+
+        
+    
+    
+            marker_62fb03e7ee5f4fcab709d7d0ab20175b.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6ed225825e81402c9e98754a43768ed5 = L.marker(
+                [19.39358, -99.16689],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_02e458eac9b14b5ea6e74d70df3f74c4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6ed225825e81402c9e98754a43768ed5.setIcon(icon_02e458eac9b14b5ea6e74d70df3f74c4);
+        
+    
+        var popup_b506e84244ee40c3b2c162993aef3fe7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_903023ff48b847ebb07dedfbd2360f6e = $(`<div id="html_903023ff48b847ebb07dedfbd2360f6e" style="width: 100.0%; height: 100.0%;">HOMICIDIO POR ARMA DE FUEGO</div>`)[0];
+            popup_b506e84244ee40c3b2c162993aef3fe7.setContent(html_903023ff48b847ebb07dedfbd2360f6e);
+        
+
+        marker_6ed225825e81402c9e98754a43768ed5.bindPopup(popup_b506e84244ee40c3b2c162993aef3fe7)
+        ;
+
+        
+    
+    
+            marker_6ed225825e81402c9e98754a43768ed5.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_894d2046bd1245798cc364c84da5cc64 = L.marker(
+                [19.39286, -99.17269],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_d78919d4e7264926acb9e4831ace180d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_894d2046bd1245798cc364c84da5cc64.setIcon(icon_d78919d4e7264926acb9e4831ace180d);
+        
+    
+        var popup_357131bc69f24db1a0b3dce7fe2d82dd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_07269c6e4519417da176a1228ecadffe = $(`<div id="html_07269c6e4519417da176a1228ecadffe" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO SIN VIOLENCIA</div>`)[0];
+            popup_357131bc69f24db1a0b3dce7fe2d82dd.setContent(html_07269c6e4519417da176a1228ecadffe);
+        
+
+        marker_894d2046bd1245798cc364c84da5cc64.bindPopup(popup_357131bc69f24db1a0b3dce7fe2d82dd)
+        ;
+
+        
+    
+    
+            marker_894d2046bd1245798cc364c84da5cc64.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0ed735b9c58d46799f6d245df61040b9 = L.marker(
+                [19.39136, -99.16719],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_e21de83134e54b5c9b966de3f0c98670 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0ed735b9c58d46799f6d245df61040b9.setIcon(icon_e21de83134e54b5c9b966de3f0c98670);
+        
+    
+        var popup_2bc4ebc9ae5c4f63a0fcc734a05cbeab = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fc21f03b8b0c4ed792126192fdb7faaa = $(`<div id="html_fc21f03b8b0c4ed792126192fdb7faaa" style="width: 100.0%; height: 100.0%;">SECUESTRO EXPRESS (PARA COMETER ROBO O EXTORSIÓN)</div>`)[0];
+            popup_2bc4ebc9ae5c4f63a0fcc734a05cbeab.setContent(html_fc21f03b8b0c4ed792126192fdb7faaa);
+        
+
+        marker_0ed735b9c58d46799f6d245df61040b9.bindPopup(popup_2bc4ebc9ae5c4f63a0fcc734a05cbeab)
+        ;
+
+        
+    
+    
+            marker_0ed735b9c58d46799f6d245df61040b9.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9bcb2c7d7fc342178490d22b218e1197 = L.marker(
+                [19.39237, -99.17173],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_8f3424a7ae9d4dfb902420214a4acbe8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9bcb2c7d7fc342178490d22b218e1197.setIcon(icon_8f3424a7ae9d4dfb902420214a4acbe8);
+        
+    
+        var popup_9c4805fad85844739e8d3ae30623a064 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e4722b80a9bc4077a93fbd0b5b03c386 = $(`<div id="html_e4722b80a9bc4077a93fbd0b5b03c386" style="width: 100.0%; height: 100.0%;">ROBO A PASAJERO / CONDUCTOR DE VEHICULO CON VIOLENCIA</div>`)[0];
+            popup_9c4805fad85844739e8d3ae30623a064.setContent(html_e4722b80a9bc4077a93fbd0b5b03c386);
+        
+
+        marker_9bcb2c7d7fc342178490d22b218e1197.bindPopup(popup_9c4805fad85844739e8d3ae30623a064)
+        ;
+
+        
+    
+    
+            marker_9bcb2c7d7fc342178490d22b218e1197.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_33199f704cc34148a58bb48c44498b11 = L.marker(
+                [19.39782, -99.16995],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_297a32d32f4747c1aa5bc21f6d8a9314 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_33199f704cc34148a58bb48c44498b11.setIcon(icon_297a32d32f4747c1aa5bc21f6d8a9314);
+        
+    
+        var popup_f17dadf9aee948a6a922c53ef2e53b1c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_642d30a2f873496b9b51a816e06f1915 = $(`<div id="html_642d30a2f873496b9b51a816e06f1915" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO CON VIOLENCIA</div>`)[0];
+            popup_f17dadf9aee948a6a922c53ef2e53b1c.setContent(html_642d30a2f873496b9b51a816e06f1915);
+        
+
+        marker_33199f704cc34148a58bb48c44498b11.bindPopup(popup_f17dadf9aee948a6a922c53ef2e53b1c)
+        ;
+
+        
+    
+    
+            marker_33199f704cc34148a58bb48c44498b11.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_741ed87f55a34effa053cddc0e52ab5e = L.marker(
+                [19.39061, -99.16625],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_cfb92fd3ca744539917485648ae31f94 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_741ed87f55a34effa053cddc0e52ab5e.setIcon(icon_cfb92fd3ca744539917485648ae31f94);
+        
+    
+        var popup_d2fcea8f34bb4f55abdda3977df4cfa2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_80c4ef58ac8f44c19457acbd6639e71a = $(`<div id="html_80c4ef58ac8f44c19457acbd6639e71a" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO CON VIOLENCIA</div>`)[0];
+            popup_d2fcea8f34bb4f55abdda3977df4cfa2.setContent(html_80c4ef58ac8f44c19457acbd6639e71a);
+        
+
+        marker_741ed87f55a34effa053cddc0e52ab5e.bindPopup(popup_d2fcea8f34bb4f55abdda3977df4cfa2)
+        ;
+
+        
+    
+    
+            marker_741ed87f55a34effa053cddc0e52ab5e.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cd29ff3df77e4a6cacd56c9ed2e64fa7 = L.marker(
+                [19.39508, -99.16839],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_9fa8217d36eb43b4a41db73985d352e6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cd29ff3df77e4a6cacd56c9ed2e64fa7.setIcon(icon_9fa8217d36eb43b4a41db73985d352e6);
+        
+    
+        var popup_265989ec8e224059a0b094384cdf85b2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_645cca38c1694f8398f879e41ee873ee = $(`<div id="html_645cca38c1694f8398f879e41ee873ee" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO SIN VIOLENCIA</div>`)[0];
+            popup_265989ec8e224059a0b094384cdf85b2.setContent(html_645cca38c1694f8398f879e41ee873ee);
+        
+
+        marker_cd29ff3df77e4a6cacd56c9ed2e64fa7.bindPopup(popup_265989ec8e224059a0b094384cdf85b2)
+        ;
+
+        
+    
+    
+            marker_cd29ff3df77e4a6cacd56c9ed2e64fa7.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6304ea1d1b374fee82f571d1e3a95b39 = L.marker(
+                [19.39243, -99.17239],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_fa9f398556754e46b784a071ccbed128 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6304ea1d1b374fee82f571d1e3a95b39.setIcon(icon_fa9f398556754e46b784a071ccbed128);
+        
+    
+        var popup_68a8d7e0b42e4f5e993562d79e2f4f96 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4f3d495220e347a5b91776232708dc19 = $(`<div id="html_4f3d495220e347a5b91776232708dc19" style="width: 100.0%; height: 100.0%;">ROBO DE OBJETOS DEL INTERIOR DE UN VEHICULO</div>`)[0];
+            popup_68a8d7e0b42e4f5e993562d79e2f4f96.setContent(html_4f3d495220e347a5b91776232708dc19);
+        
+
+        marker_6304ea1d1b374fee82f571d1e3a95b39.bindPopup(popup_68a8d7e0b42e4f5e993562d79e2f4f96)
+        ;
+
+        
+    
+    
+            marker_6304ea1d1b374fee82f571d1e3a95b39.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b221d5d847e6426a960f245e05c5aa16 = L.marker(
+                [19.3951, -99.17094],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_0a3dfda4813c432f90e11eda15ba6442 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b221d5d847e6426a960f245e05c5aa16.setIcon(icon_0a3dfda4813c432f90e11eda15ba6442);
+        
+    
+        var popup_fac1fb737e1241048326abcef1260d64 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4c5bf8d66a0a405c99b061bf36301f51 = $(`<div id="html_4c5bf8d66a0a405c99b061bf36301f51" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO SIN VIOLENCIA</div>`)[0];
+            popup_fac1fb737e1241048326abcef1260d64.setContent(html_4c5bf8d66a0a405c99b061bf36301f51);
+        
+
+        marker_b221d5d847e6426a960f245e05c5aa16.bindPopup(popup_fac1fb737e1241048326abcef1260d64)
+        ;
+
+        
+    
+    
+            marker_b221d5d847e6426a960f245e05c5aa16.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_55a9490865474a82aa17cd7c1013dcc5 = L.marker(
+                [19.39386, -99.17038],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_c2c3407f38264c23999f502ffd6cdec9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_55a9490865474a82aa17cd7c1013dcc5.setIcon(icon_c2c3407f38264c23999f502ffd6cdec9);
+        
+    
+        var popup_179abcc1df2f4270aa8f0a429fd5fa37 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e867d83adb81422e9a7e9f77d713ed66 = $(`<div id="html_e867d83adb81422e9a7e9f77d713ed66" style="width: 100.0%; height: 100.0%;">ROBO DE VEHICULO DE SERVICIO PARTICULAR SIN VIOLENCIA</div>`)[0];
+            popup_179abcc1df2f4270aa8f0a429fd5fa37.setContent(html_e867d83adb81422e9a7e9f77d713ed66);
+        
+
+        marker_55a9490865474a82aa17cd7c1013dcc5.bindPopup(popup_179abcc1df2f4270aa8f0a429fd5fa37)
+        ;
+
+        
+    
+    
+            marker_55a9490865474a82aa17cd7c1013dcc5.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_12c299846cfb493bb57c7c581357d223 = L.marker(
+                [19.3929315120759, -99.1673278980322],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_881bbbe727a84959924af4fdc20ece26 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_12c299846cfb493bb57c7c581357d223.setIcon(icon_881bbbe727a84959924af4fdc20ece26);
+        
+    
+        var popup_9f72f96409cd47f2be08a77dcc118ec3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_03b7dfd36a9a41318c4a78a41229efd2 = $(`<div id="html_03b7dfd36a9a41318c4a78a41229efd2" style="width: 100.0%; height: 100.0%;">ROBO A TRANSEUNTE EN VIA PUBLICA CON VIOLENCIA</div>`)[0];
+            popup_9f72f96409cd47f2be08a77dcc118ec3.setContent(html_03b7dfd36a9a41318c4a78a41229efd2);
+        
+
+        marker_12c299846cfb493bb57c7c581357d223.bindPopup(popup_9f72f96409cd47f2be08a77dcc118ec3)
+        ;
+
+        
+    
+    
+            marker_12c299846cfb493bb57c7c581357d223.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_00982b8676c74d9f885390c8b366954d = L.marker(
+                [19.3904246671709, -99.1663785280185],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_f2e0ea5f0b614fb881df308d73b09404 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_00982b8676c74d9f885390c8b366954d.setIcon(icon_f2e0ea5f0b614fb881df308d73b09404);
+        
+    
+        var popup_7a3dd91271504fceb564592b1aef07e5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fe6c29a3e25b4c2d80030c38a8bafc78 = $(`<div id="html_fe6c29a3e25b4c2d80030c38a8bafc78" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO SIN VIOLENCIA</div>`)[0];
+            popup_7a3dd91271504fceb564592b1aef07e5.setContent(html_fe6c29a3e25b4c2d80030c38a8bafc78);
+        
+
+        marker_00982b8676c74d9f885390c8b366954d.bindPopup(popup_7a3dd91271504fceb564592b1aef07e5)
+        ;
+
+        
+    
+    
+            marker_00982b8676c74d9f885390c8b366954d.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ab72de3a85104944a935d77d34f9aff3 = L.marker(
+                [19.3904246671709, -99.1663785280185],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_e41c5e62e3bf49a282babf82dd51b146 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ab72de3a85104944a935d77d34f9aff3.setIcon(icon_e41c5e62e3bf49a282babf82dd51b146);
+        
+    
+        var popup_0c3ec8b95d2a48dfa532fe1672e2e737 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6df6ebc666c547ed9c03919c6f2d19ab = $(`<div id="html_6df6ebc666c547ed9c03919c6f2d19ab" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO SIN VIOLENCIA</div>`)[0];
+            popup_0c3ec8b95d2a48dfa532fe1672e2e737.setContent(html_6df6ebc666c547ed9c03919c6f2d19ab);
+        
+
+        marker_ab72de3a85104944a935d77d34f9aff3.bindPopup(popup_0c3ec8b95d2a48dfa532fe1672e2e737)
+        ;
+
+        
+    
+    
+            marker_ab72de3a85104944a935d77d34f9aff3.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3705312365ae4935992a906b842adbb0 = L.marker(
+                [19.3918617747045, -99.1724885079123],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_dc80461f0bff4bc48f6462e6213823c0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3705312365ae4935992a906b842adbb0.setIcon(icon_dc80461f0bff4bc48f6462e6213823c0);
+        
+    
+        var popup_1a7ca7d5cd3b4ad7b0b832b1235a2cab = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2015bb536f59490f8c2930cbf4586539 = $(`<div id="html_2015bb536f59490f8c2930cbf4586539" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO SIN VIOLENCIA</div>`)[0];
+            popup_1a7ca7d5cd3b4ad7b0b832b1235a2cab.setContent(html_2015bb536f59490f8c2930cbf4586539);
+        
+
+        marker_3705312365ae4935992a906b842adbb0.bindPopup(popup_1a7ca7d5cd3b4ad7b0b832b1235a2cab)
+        ;
+
+        
+    
+    
+            marker_3705312365ae4935992a906b842adbb0.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d664c12600a744be8d227dc7462f8a7c = L.marker(
+                [19.3900813749587, -99.168286634604],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_5f3adbd8d38d4ba4838ed22fb45b1eb6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d664c12600a744be8d227dc7462f8a7c.setIcon(icon_5f3adbd8d38d4ba4838ed22fb45b1eb6);
+        
+    
+        var popup_d0896a96626844c696e674ca4368f188 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0385b58dbc6d4fcdb12ddff4d469f8b9 = $(`<div id="html_0385b58dbc6d4fcdb12ddff4d469f8b9" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO SIN VIOLENCIA</div>`)[0];
+            popup_d0896a96626844c696e674ca4368f188.setContent(html_0385b58dbc6d4fcdb12ddff4d469f8b9);
+        
+
+        marker_d664c12600a744be8d227dc7462f8a7c.bindPopup(popup_d0896a96626844c696e674ca4368f188)
+        ;
+
+        
+    
+    
+            marker_d664c12600a744be8d227dc7462f8a7c.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_322d09298fb94a0e99f4a41f1fb09785 = L.marker(
+                [19.3921123400517, -99.1718032002039],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_b4ce68b03ff845c99be46f4f39c49fd8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_322d09298fb94a0e99f4a41f1fb09785.setIcon(icon_b4ce68b03ff845c99be46f4f39c49fd8);
+        
+    
+        var popup_0413a05cc025402caafc9baab76315b1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_10e0277ba01e434b99251bc578b9381b = $(`<div id="html_10e0277ba01e434b99251bc578b9381b" style="width: 100.0%; height: 100.0%;">ROBO DE OBJETOS DEL INTERIOR DE UN VEHICULO</div>`)[0];
+            popup_0413a05cc025402caafc9baab76315b1.setContent(html_10e0277ba01e434b99251bc578b9381b);
+        
+
+        marker_322d09298fb94a0e99f4a41f1fb09785.bindPopup(popup_0413a05cc025402caafc9baab76315b1)
+        ;
+
+        
+    
+    
+            marker_322d09298fb94a0e99f4a41f1fb09785.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_60eec35e885b4d4d9f34a65afd3f9960 = L.marker(
+                [19.3991369001211, -99.1706488209802],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_c15a29d798b14e148dc7290d9e97d427 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_60eec35e885b4d4d9f34a65afd3f9960.setIcon(icon_c15a29d798b14e148dc7290d9e97d427);
+        
+    
+        var popup_5df0aa67d8cb4c0a9d3386a3c8c1070c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_06761ecb5dce4fcf8efdc48896fe124d = $(`<div id="html_06761ecb5dce4fcf8efdc48896fe124d" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO SIN VIOLENCIA</div>`)[0];
+            popup_5df0aa67d8cb4c0a9d3386a3c8c1070c.setContent(html_06761ecb5dce4fcf8efdc48896fe124d);
+        
+
+        marker_60eec35e885b4d4d9f34a65afd3f9960.bindPopup(popup_5df0aa67d8cb4c0a9d3386a3c8c1070c)
+        ;
+
+        
+    
+    
+            marker_60eec35e885b4d4d9f34a65afd3f9960.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5dc0164f2c7f4dcf9de383db1777a251 = L.marker(
+                [19.3941754499024, -99.1711502713266],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_57e2d5b1ed404d7a93d32ec4875b05dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5dc0164f2c7f4dcf9de383db1777a251.setIcon(icon_57e2d5b1ed404d7a93d32ec4875b05dd);
+        
+    
+        var popup_b7ab10df85694b24b48c809fb889d94e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4974e607d26b4da1b905fd2f0bc0b517 = $(`<div id="html_4974e607d26b4da1b905fd2f0bc0b517" style="width: 100.0%; height: 100.0%;">ROBO DE OBJETOS DEL INTERIOR DE UN VEHICULO</div>`)[0];
+            popup_b7ab10df85694b24b48c809fb889d94e.setContent(html_4974e607d26b4da1b905fd2f0bc0b517);
+        
+
+        marker_5dc0164f2c7f4dcf9de383db1777a251.bindPopup(popup_b7ab10df85694b24b48c809fb889d94e)
+        ;
+
+        
+    
+    
+            marker_5dc0164f2c7f4dcf9de383db1777a251.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0de72b6c4d434a41b8111b1aac2265fc = L.marker(
+                [19.3942383069739, -99.1722478360283],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_a38a5472102444bd8d706facbcac266c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0de72b6c4d434a41b8111b1aac2265fc.setIcon(icon_a38a5472102444bd8d706facbcac266c);
+        
+    
+        var popup_40fb0e2dda6341789bed08fef800fd65 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e0451b740d6747d1a471f06e7d9837e3 = $(`<div id="html_e0451b740d6747d1a471f06e7d9837e3" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO CON VIOLENCIA</div>`)[0];
+            popup_40fb0e2dda6341789bed08fef800fd65.setContent(html_e0451b740d6747d1a471f06e7d9837e3);
+        
+
+        marker_0de72b6c4d434a41b8111b1aac2265fc.bindPopup(popup_40fb0e2dda6341789bed08fef800fd65)
+        ;
+
+        
+    
+    
+            marker_0de72b6c4d434a41b8111b1aac2265fc.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f838ffbbc0f247edac0a7dbb8b0cb8f5 = L.marker(
+                [19.3983825766738, -99.1708137731979],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_29d8f86b01c249c080ea4cdb87176b17 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f838ffbbc0f247edac0a7dbb8b0cb8f5.setIcon(icon_29d8f86b01c249c080ea4cdb87176b17);
+        
+    
+        var popup_16753a68563f4ebfbb21d5e854d1f3bd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ba85188d2c3b4bbb8489da51a412ba48 = $(`<div id="html_ba85188d2c3b4bbb8489da51a412ba48" style="width: 100.0%; height: 100.0%;">ROBO A TRANSEUNTE EN VIA PUBLICA CON VIOLENCIA</div>`)[0];
+            popup_16753a68563f4ebfbb21d5e854d1f3bd.setContent(html_ba85188d2c3b4bbb8489da51a412ba48);
+        
+
+        marker_f838ffbbc0f247edac0a7dbb8b0cb8f5.bindPopup(popup_16753a68563f4ebfbb21d5e854d1f3bd)
+        ;
+
+        
+    
+    
+            marker_f838ffbbc0f247edac0a7dbb8b0cb8f5.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ed251b4c1b7c493faa09768a085bf3e0 = L.marker(
+                [19.3919159748427, -99.1727036725988],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_d0d1404e4c7445e691f32b38c4322f60 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ed251b4c1b7c493faa09768a085bf3e0.setIcon(icon_d0d1404e4c7445e691f32b38c4322f60);
+        
+    
+        var popup_c7308a0028a04ec5922d0ac711fb7598 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_59484a2f7869439abb3752eafd419560 = $(`<div id="html_59484a2f7869439abb3752eafd419560" style="width: 100.0%; height: 100.0%;">ROBO A NEGOCIO SIN VIOLENCIA</div>`)[0];
+            popup_c7308a0028a04ec5922d0ac711fb7598.setContent(html_59484a2f7869439abb3752eafd419560);
+        
+
+        marker_ed251b4c1b7c493faa09768a085bf3e0.bindPopup(popup_c7308a0028a04ec5922d0ac711fb7598)
+        ;
+
+        
+    
+    
+            marker_ed251b4c1b7c493faa09768a085bf3e0.bindTooltip(
+                `<div>
+                     Reported Crime!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_aa1960139f574c55a74cc66cdf10ba9d = L.marker(
+                [19.3931933, -99.1712245],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_490c43a4cbed41d7ae5f0c5433893090 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_aa1960139f574c55a74cc66cdf10ba9d.setIcon(icon_490c43a4cbed41d7ae5f0c5433893090);
+        
+    
+        var popup_2f29675dc04341598ecbefb0d0322597 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cf9a5c185cbe49c9b0e0f25ad0fd8e69 = $(`<div id="html_cf9a5c185cbe49c9b0e0f25ad0fd8e69" style="width: 100.0%; height: 100.0%;">To find nearest police station folllow the green line</div>`)[0];
+            popup_2f29675dc04341598ecbefb0d0322597.setContent(html_cf9a5c185cbe49c9b0e0f25ad0fd8e69);
+        
+
+        marker_aa1960139f574c55a74cc66cdf10ba9d.bindPopup(popup_2f29675dc04341598ecbefb0d0322597)
+        ;
+
+        
+    
+    
+            marker_aa1960139f574c55a74cc66cdf10ba9d.bindTooltip(
+                `<div>
+                     Your Address
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cf4c37e2c9b343e89253af2aeda5425d = L.marker(
+                [19.4014737, -99.1553624],
+                {}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+    
+            var icon_ddc4ef03d9c94adea4b7cedfebf514ea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_cf4c37e2c9b343e89253af2aeda5425d.setIcon(icon_ddc4ef03d9c94adea4b7cedfebf514ea);
+        
+    
+        var popup_70123668024147bf962c1adc08483980 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9784a26629854fbbbde1b6fea5096433 = $(`<div id="html_9784a26629854fbbbde1b6fea5096433" style="width: 100.0%; height: 100.0%;">Nearest Police station: 1.90 kilometers</div>`)[0];
+            popup_70123668024147bf962c1adc08483980.setContent(html_9784a26629854fbbbde1b6fea5096433);
+        
+
+        marker_cf4c37e2c9b343e89253af2aeda5425d.bindPopup(popup_70123668024147bf962c1adc08483980)
+        ;
+
+        
+    
+    
+            marker_cf4c37e2c9b343e89253af2aeda5425d.bindTooltip(
+                `<div>
+                     Police station
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_f78d7b16b19c49fa947a243b521fcaca = L.polyline(
+                [[19.3931933, -99.1712245], [19.4014737, -99.1553624]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_2a2620bb837546b0b1c507987c4f48e6);
+        
+</script>

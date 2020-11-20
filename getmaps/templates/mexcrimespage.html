@@ -1,0 +1,107 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  {% load static%}
+  <link rel='stylesheet' href="{%static 'style.css'%}" type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald&display=swap" rel="stylesheet">
+  <title>Crimes Mexico City</title>
+  <style type="text/css">
+  	h1 {
+  		font-family: 'Oswald', sans-serif;
+  		justify-content: left;
+		margin-top: 40px;
+		margin-bottom: 2.5rem;
+		font-size: 50px;
+		font-weight: bolder
+  	}
+  	.myButton {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	background-color:#ededed;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#777777;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	background-color:#dfdfdf;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.jumbotron {
+  background-image: url("https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg");
+  background-size: cover;
+}
+  </style>
+}
+
+</head>
+
+<body>
+	<div class="container">
+		<!--<h1>How risky is the place where I'm going?</h1>-->
+		
+  <div class="jumbotron">
+    <h1>How risky is the place where I'm going?</h1>
+  </div>
+
+
+	<form method="get">
+    {% csrf_token %}
+    <table class="form">
+      {{ form }}
+        {{ form.media }}
+    </table>
+    <button class="myButton" type="submit">Submit</button>
+  </form>
+
+  {% if err %}
+  <div class="error">
+    {{ err|safe }}
+  </div>
+  {% endif %}
+
+  <div class="frame row">
+    {% if result != None %}
+    <div class="results row">
+     	<!-- <h2> {{result}} </h2>-->
+       		<!--<img src="{{IMAGE_URL_1}}"/>
+       		<img src="{{IMAGE_URL_2}}"/>-->
+    		<iframe src={{IMAGE_URL_1}} width="500" height="500"  scrolling="no" style="overflow:hidden;"></iframe>
+    		<iframe src={{IMAGE_URL_2}} width="500" height="500" scrolling="no" style="overflow:hidden;"></iframe>       	
+    		<iframe src={{map1}} width="500" height="500"></iframe>
+    		<iframe src={{map2}} width="500" height="500"></iframe>
+    	</div>
+    </div>
+    {% endif %}
+  </div>
+	</div>
+  <script>
+  function activate_places(){
+    var defaultBounds =  new google.maps.LatLngBounds(
+          new google.maps.LatLng(-99.597, 18.992),
+          new google.maps.LatLng(-98.606, 19.921));
+    var options = {bounds : defaultBounds,componentRestrictions: {"country": 'mx'}};
+    var location_input = document.getElementById('id_address');
+    var autocomplete = new google.maps.places.Autocomplete(location_input, options)
+  }
+  </script>
+  <script type="text/javascript"
+    src = "https://maps.googleapis.com/maps/api/js?key=YOURKEY&libraries=places&callback=activate_places" async defer>
+</script>
+</body>
+</html>

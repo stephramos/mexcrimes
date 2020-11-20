@@ -1,0 +1,74 @@
+html,body{
+    background-color: white;
+}
+
+h1{
+  color: black;
+  text-align: center;
+  font-style: italic;
+}
+
+div{
+  background-color: white;
+}
+label{
+    color: black;
+    text-align: justify;
+    font-size: 18px;
+}
+span.helptext {
+    font-size: 15px;
+    color: gray;
+}
+
+div.error {
+    color: red;
+    text-align: center;
+    font-size: 20px;
+}
+ul.errorlist {
+    margin: 0px;
+    padding: 0px;
+    padding-top: 5px;
+
+}
+
+ul.errorlist li {
+    font-size: 12px;
+    color: red;
+    margin: 0px;
+    padding: 0px;
+}
+
+img{
+  height: 350px
+
+}
+
+table.form ul#id_day {
+    margin: 0px;
+    padding: 0px;
+}
+
+table.form ul#id_day li {
+    display: block;
+    float: left;
+    margin: 8px;
+    padding: 0px;
+}
+
+table.form ul#id_crime_type {
+    margin: 0px;
+    padding: 0px;
+}
+
+table.form ul#id_crime_type li {
+    display: block;
+    float: left;
+    margin: 8px;
+    padding: 0px;
+}
+iframe {
+    margin: 15px;
+    padding: 0px;
+}
